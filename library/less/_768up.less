@@ -224,8 +224,8 @@ NAVIGATION STYLES
 		&:focus a,
 		&.current-menu-item a {
 			background-color: rgba(255,134,163,0.8);
-			.boxShadow(5px, 5px, 2px, 0, rgba(0,0,0,.15) );
-			top: -10px;
+			.boxShadow(4px, 2px, 2px, 0, rgba(0,0,0,.15) );
+			top: -1px;
 		}
 
 		&:first-child {}
@@ -241,7 +241,7 @@ NAVIGATION STYLES
 			border-top: 0;
 			position: absolute;
 			display: none;
-			z-index: 8999;
+			z-index: 999;
 
 			li {
 
@@ -311,14 +311,15 @@ POSTS & CONTENT STYLES
 			article {
 			}
 
-			.morelink,
-			.logout-link {
-				.transition();
-				&:hover,
-				&:focus {
-					padding-left: 15px;
+			.morelink {
+				font-size: 17px;
+				&, .logout-link {
+					.transition();
+					&:hover,
+					&:focus {
+						padding-left: 15px;
+					}
 				}
-				
 			}
 		}
 	}
