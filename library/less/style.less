@@ -1,0 +1,238 @@
+/******************************************************************
+Site Name: RixTox Balcony
+Author: RixTox
+URL: http://rixtox.com/
+
+Stylesheet: Main Stylesheet
+
+Here's where the magic happens. Here, you'll see we are calling in
+the separate media queries. The base mobile goes outside any query
+and is called at the beginning, after that we call the rest
+of the styles inside media queries.
+******************************************************************/
+
+
+//
+// IMPORTING STYLES
+//
+
+// import normalize
+@import "_normalize.less";
+
+// import mixins
+@import "_mixins.less";
+
+/*
+BASE (MOBILE) SIZE
+This are the mobile styles. It's what people see on their phones. If
+you set a great foundation, you won't need to add too many styles in
+the other stylesheets. Remember, keep it light: Speed is Important.
+*/
+
+// styles in base.less
+@import "_base.less";
+
+/*
+LARGER MOBILE DEVICES
+This is for devices like the Galaxy Note or something that's
+larger than an iPhone but smaller than a tablet. Let's call them
+tweeners.
+*/
+@media only screen and (min-width: 481px) {
+
+	// styles in 481up.less
+	@import "_481up.less";
+
+} // end of media query
+
+/*
+TABLET & SMALLER LAPTOPS
+This is the average viewing window. So Desktops, Laptops, and
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+*/
+@media only screen and (min-width: 768px) {
+
+	// import grid
+	@import "_grid.less";
+
+	// styles in 768up.less
+	@import "_768up.less";
+
+} // end of media query
+
+/*
+DESKTOP
+This is the average viewing window. So Desktops, Laptops, and
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+*/
+@media only screen and (min-width: 1030px) {
+
+	// styles in 1030up.less
+	@import "_1030up.less";
+
+} // end of media query
+
+/*
+LARGE VIEWING SIZE
+This is for the larger monitors and possibly full screen viewers.
+*/
+@media only screen and (min-width: 1240px) {
+
+	// styles in 1240up.less
+	@import "_1240up.less";
+
+} // end of media query
+
+/*
+RETINA (2x RESOLUTION DEVICES)
+This applies to the retina iPhone (4s) and iPad (2,3) along with
+other displays with a 2x resolution. You can also create a media
+query for retina AND a certain size if you want. Go Nuts.
+*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min--moz-device-pixel-ratio: 1.5),
+       only screen and (min-device-pixel-ratio: 1.5) {
+
+	// styles in 2x.less
+	@import "_2x.less";
+
+} // end of media query
+
+/*
+iPHONE 5 MEDIA QUERY
+Want to get fancy for no good reason? Knock yourself out.
+*/
+@media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  
+  // iPhone 5 or iPod Touch 5th generation styles (you can include your own file if you want)
+  
+}
+
+/*
+PRINT STYLESHEET
+Feel free to customize this. Remember to add things that won't make
+sense to print at the bottom. Things like nav, ads, and forms should
+be set to display none.
+*/
+@media print {
+	
+	@import "_print.less";
+	
+} // end of media query
+
+
+#main {
+	.article-header {}
+	.article-footer {
+		.tags {
+			zoom: 1;
+			&:before,
+			&:after {
+				content: "";
+				display: table;
+			}
+			&:after { clear: both; }
+
+			li {
+				position: relative;
+				float: left;
+				margin: 0 12px 8px 0;
+				&:active {
+					margin-top: 1px;
+					margin-bottom: 7px;
+				}
+				&:after {
+					content: '';
+					z-index: 3;
+					position: absolute;
+					top: 10px;
+					right: -2px;
+					width: 5px;
+					height: 6px;
+					opacity: .95;
+					border-radius: 3px 0 0 3px;
+				}
+			}
+
+			a,
+			span {
+				display: block;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+			a {
+				height: 26px;
+				line-height: 23px;
+				padding: 0 9px 0 8px;
+				font-size: 12px;
+				color: #555;
+				text-decoration: none;
+				text-shadow: 0 1px #fff;
+				border-width: 1px 0 1px 1px;
+				border-style: solid;
+				border-color: #dadada #d2d2d2 #c5c5c5;
+				border-radius: 3px 0 0 3px;
+				background-color: #fafafa;
+
+				background-image: -webkit-linear-gradient(top, #fcfcfc, #f0f0f0);
+				background-image:    -moz-linear-gradient(top, #fcfcfc, #f0f0f0);
+				background-image:     -ms-linear-gradient(top, #fcfcfc, #f0f0f0);
+				background-image:      -o-linear-gradient(top, #fcfcfc, #f0f0f0);
+				background-image:         linear-gradient(top, #fcfcfc, #f0f0f0);
+
+				-webkit-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7), 0 1px 2px rgba(0, 0, 0, 0.05);
+				        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7), 0 1px 2px rgba(0, 0, 0, 0.05);
+				&:hover,
+				&:focus {
+					text-decoration: none;
+					& span {
+						padding: 0 7px 0 6px;
+						max-width: 40px;
+						-webkit-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15), 1px 1px 2px rgba(0, 0, 0, 0.2);
+								box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15), 1px 1px 2px rgba(0, 0, 0, 0.2);
+					}
+				}
+			}
+
+			span {
+				position: absolute;
+				top: 1px;
+				left: 100%;
+				z-index: 2;
+				overflow: hidden;
+				max-width: 0;
+				height: 24px;
+				line-height: 21px;
+				padding: 0 0 0 2px;
+				opacity: .95;
+				color: #fff;
+				text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+				border: 1px solid;
+				border-radius: 0 2px 2px 0;
+				.transition(all, 0.3s, ease-out);
+			}
+			.red {
+				.bones-li-color(#e23540);
+			}
+
+			.orange {
+				.bones-li-color(#eb6b22);
+			}
+
+			.green {
+				.bones-li-color(#65bb34);
+			}
+
+			.blue {
+				.bones-li-color(#56a3d5);
+			}
+
+			.purple {
+				.bones-li-color(#7a78ac);
+			}
+		}
+	}
+}
