@@ -1,6 +1,6 @@
 /******************************************************************
-Site Name:
-Author:
+Site Name: RixTox Balcony
+Author: RixTox
 
 Stylesheet: Tablet & Small Desktop Stylesheet
 
@@ -311,15 +311,16 @@ POSTS & CONTENT STYLES
 			article {
 			}
 
+			article div.related-posts ul li, .morelink, .logout-link {
+				.transition();
+				&:hover,
+				&:focus {
+					padding-left: 15px;
+				}
+			}
+
 			.morelink {
 				font-size: 17px;
-				&, .logout-link {
-					.transition();
-					&:hover,
-					&:focus {
-						padding-left: 15px;
-					}
-				}
 			}
 		}
 	}
@@ -352,7 +353,6 @@ SIDEBARS & ASIDES
 				.transition();
 				&:hover,
 				&:focus {
-					.transform( *translateX(10px) );
 					padding-left: 10px;
 				}
 
